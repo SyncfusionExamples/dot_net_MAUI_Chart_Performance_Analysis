@@ -1,2 +1,2 @@
 # dot_net_MAUI_Chart_Performance_Analysis
-This project validate the performance metrics of .NET MAUI SfCartesianChart.
+This sample helps to analyse the performance of .NET MAUI Chart.
