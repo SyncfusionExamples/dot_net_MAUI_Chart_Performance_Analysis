@@ -1,6 +1,5 @@
-﻿using Syncfusion.Maui.Charts;
-using System.Collections.ObjectModel;
-using System.Globalization;
+﻿using System.Collections.ObjectModel;
+using Syncfusion.Maui.Charts;
 
 namespace PerformanceMetrics
 {
@@ -23,7 +22,7 @@ namespace PerformanceMetrics
                 generator.IsRunning = true;
                 mySeries1.ItemsSource = data;
             }
-        }        
+        }
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
@@ -51,14 +50,8 @@ namespace PerformanceMetrics
                 generator.IsRunning = true;
                 mySeries1.ItemsSource = data;
             }
-            
-        }
-    }
 
-    public class Model
-    {
-        public double XValue { get; set; }
-        public double YValue { get; set; }
+        }
     }
 
     public class FastLineSeriesExt : FastLineSeries

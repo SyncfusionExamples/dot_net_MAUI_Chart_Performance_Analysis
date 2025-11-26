@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PerformanceMetrics
 {
@@ -12,7 +10,7 @@ namespace PerformanceMetrics
     {
         public DateTime StartTime { get; set; }
 
-        public  bool IsRunning { get; set; }
+        public bool IsRunning { get; set; }
 
         public string timeTaken = "Time Taken: 0 ms";
 
@@ -47,7 +45,7 @@ namespace PerformanceMetrics
         }
 
         public string TimeTaken
-        { 
+        {
             get
             {
                 return timeTaken;
@@ -70,7 +68,7 @@ namespace PerformanceMetrics
 
         public ObservableCollection<Model> LoadData(int count)
         {
-            ObservableCollection<Model>  data = new ObservableCollection<Model>();
+            ObservableCollection<Model> data = new ObservableCollection<Model>();
 
             double value = 50;
 

@@ -13,6 +13,16 @@ This repository provides a quick-start example to analyze the loading performanc
 
 **Step 5**: Observe the elapsed time displayed in the label once the chart series is rendered.
 
+## Output
+[add img]
+
+## Sample results
+| Data Size | Time Taken (ms) |
+|-----------|-----------------|
+| 10k       | 38.05           |
+| 50k       | 49.44           |
+| 100k      | 67.94           |
+
 ## Troubleshooting
 
 ### Path Too Long Exception
