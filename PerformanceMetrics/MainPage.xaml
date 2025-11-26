@@ -13,16 +13,18 @@
         </Grid.RowDefinitions>
 
         <Grid.BindingContext>
-            <local:DataGenerator/>
+            <local:DataGenerator />
         </Grid.BindingContext>
+
         <HorizontalStackLayout Grid.Row="0" Spacing="5">
             <Button Text="Load 10K Data" Clicked="Button_Clicked"/>
             <Button Text="Load 50K Data" Clicked="Button_Clicked_1"/>
             <Button Text="Load 100K Data" Clicked="Button_Clicked_2"/>
             <Label Text="{Binding TimeTaken,Mode=TwoWay}" TextColor="Black"  Margin="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontFamily="Helvicta"/>
         </HorizontalStackLayout>
-        <ActivityIndicator Grid.Row="1" IsRunning="{Binding IsActive,Mode=TwoWay}" ZIndex="2">
-        </ActivityIndicator>
+
+        <ActivityIndicator Grid.Row="1" IsRunning="{Binding IsActive,Mode=TwoWay}" ZIndex="2" />
+
         <chart:SfCartesianChart x:Name="myChart" Grid.Row="1" ZIndex="1">
             <chart:SfCartesianChart.XAxes>
                 <chart:NumericalAxis/>
@@ -33,8 +35,8 @@
             <chart:SfCartesianChart.TrackballBehavior>
                 <chart:ChartTrackballBehavior/>
             </chart:SfCartesianChart.TrackballBehavior>
-            <local:FastLineSeriesExt XBindingPath="XValue" EnableAntiAliasing="False" YBindingPath="YValue" x:Name="mySeries1"/>
-        </chart:SfCartesianChart>
 
+            <local:FastLineSeriesExt XBindingPath="XValue" EnableAntiAliasing="False" YBindingPath="YValue" x:Name="mySeries1" />
+        </chart:SfCartesianChart>
     </Grid>
 </ContentPage>
