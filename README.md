@@ -23,6 +23,71 @@ This repository provides a quick-start example to analyze the loading performanc
 | 50k       | 49.44           |
 | 100k      | 67.94           |
 
+### Specifications
+| | |
+|-----------|-----------------|
+| .NET version               | .NET 10.0        |
+| Syncfusion Charts version  | 31.2.15          |
+| RAM      | 16 GB        |
+
+### Guidelines to Optimize Performance in Syncfusion® MAUI Charts
+1. **Disable Anti-Aliasing**
+    - Description: Anti-aliasing smooths out jagged edges on lines but can increase rendering time.
+    - Implementation: Set the [EnableAntiAliasing](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.FastLineSeries.html#Syncfusion_Maui_Charts_FastLineSeries_EnableAntiAliasing) property to false.
+    - Benefit: Disabling anti-aliasing reduces the rendering overhead, improving performance without significantly compromising visual quality.
+    ```xml
+    <chart:FastLineSeries  
+                    ItemsSource="{Binding DataCollection}"
+                    XBindingPath="Date"
+                    YBindingPath="Value"
+                    EnableAntiAliasing="False">
+    </chart:FastLineSeries> 
+    ```  
+
+2.  **Reduce Stroke Width**
+    - Description: Thicker lines require more rendering effort.
+    - Implementation: Reduce the series [StrokeWidth](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.XYDataSeries.html#Syncfusion_Maui_Charts_XYDataSeries_StrokeWidth) property to 1.
+    - Benefit: Using a thinner line ensures faster rendering while retaining clarity in the chart.
+    ```xml
+    <chart:FastLineSeries 
+                    ItemsSource="{Binding DataCollection}"
+                    XBindingPath="Date"
+                    StrokeWidth="1"
+                    YBindingPath="Value">
+    </chart:FastLineSeries> 
+    ```
+
+3. **Remove Data Labels**
+    - Description: Displaying data labels for each data point can significantly slow down rendering, especially with large datasets.
+    - Implementation: Avoid using data labels with the FastLine series. Set the [ShowDataLabels](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.ChartSeries.html#Syncfusion_Maui_Charts_ChartSeries_ShowDataLabels) property to false.
+    - Benefit: Eliminating data labels speeds up rendering and reduces visual clutter in high-density charts.
+    ```xml
+    <chart:FastLineSeries 
+                    ItemsSource="{Binding DataCollection}"
+                    XBindingPath="Date"
+                    ShowDataLabels="False"
+                    YBindingPath="Value">
+    </chart:FastLineSeries> 
+    ```
+
+4. **Choose the Appropriate Axis**
+    - Description: The choice of axis affects rendering performance. A CategoryAxis processes each label individually, which can be slower compared to NumericalAxis or DateTimeAxis.
+    - Implementation: Use DateTimeAxis or NumericalAxis based on the data type.
+    - Benefit: These axes streamline data processing, resulting in faster chart updates.
+    ```xml
+    <chart:SfCartesianChart.XAxes>
+        <chart:DateTimeAxis>
+        </chart:DateTimeAxis>
+    </chart:SfCartesianChart.XAxes>
+
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis>
+        </chart:NumericalAxis>
+    </chart:SfCartesianChart.YAxes> 
+    ```
+
+By following these strategies, you can optimize the performance of the [FastLine Series](https://help.syncfusion.com/maui/cartesian-charts/fastline) in .NET MAUI Cartesian Chart Control.
+
 ## Troubleshooting
 
 ### Path Too Long Exception
