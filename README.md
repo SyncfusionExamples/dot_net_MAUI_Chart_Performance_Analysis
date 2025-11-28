@@ -33,7 +33,7 @@ This repository provides a quick-start example to analyze the loading performanc
 ### Guidelines to Optimize Performance in Syncfusion® MAUI Charts
 1. **Disable Anti-Aliasing**
     - Description: Anti-aliasing smooths out jagged edges on lines but can increase rendering time.
-    - Implementation: Set the [EnableAntiAliasing](https://help.syncfusion.com/cr/maui-toolkit/Syncfusion.Maui.Toolkit.Charts.FastLineSeries.html#Syncfusion_Maui_Toolkit_Charts_FastLineSeries_EnableAntiAliasing) property to false.
+    - Implementation: Set the [EnableAntiAliasing](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.FastLineSeries.html#Syncfusion_Maui_Charts_FastLineSeries_EnableAntiAliasing) property to false.
     - Benefit: Disabling anti-aliasing reduces the rendering overhead, improving performance without significantly compromising visual quality.
     ```xml
     <chart:FastLineSeries  
@@ -46,7 +46,7 @@ This repository provides a quick-start example to analyze the loading performanc
 
 2.  **Reduce Stroke Width**
     - Description: Thicker lines require more rendering effort.
-    - Implementation: Reduce the series [StrokeWidth](https://help.syncfusion.com/cr/maui-toolkit/Syncfusion.Maui.Toolkit.Charts.XYDataSeries.html#Syncfusion_Maui_Toolkit_Charts_XYDataSeries_StrokeWidth) property to 1.
+    - Implementation: Reduce the series [StrokeWidth](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.XYDataSeries.html#Syncfusion_Maui_Charts_XYDataSeries_StrokeWidth) property to 1.
     - Benefit: Using a thinner line ensures faster rendering while retaining clarity in the chart.
     ```xml
     <chart:FastLineSeries 
@@ -59,7 +59,7 @@ This repository provides a quick-start example to analyze the loading performanc
 
 3. **Remove Data Labels**
     - Description: Displaying data labels for each data point can significantly slow down rendering, especially with large datasets.
-    - Implementation: Avoid using data labels with the FastLine series. Set the [ShowDataLabels](https://help.syncfusion.com/cr/maui-toolkit/Syncfusion.Maui.Toolkit.Charts.ChartSeries.html#Syncfusion_Maui_Toolkit_Charts_ChartSeries_ShowDataLabels) property to false.
+    - Implementation: Avoid using data labels with the FastLine series. Set the [ShowDataLabels](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.ChartSeries.html#Syncfusion_Maui_Charts_ChartSeries_ShowDataLabels) property to false.
     - Benefit: Eliminating data labels speeds up rendering and reduces visual clutter in high-density charts.
     ```xml
     <chart:FastLineSeries 
@@ -86,7 +86,7 @@ This repository provides a quick-start example to analyze the loading performanc
     </chart:SfCartesianChart.YAxes> 
     ```
 
-By following these strategies, you can optimize the performance of the FastLine Series in .NET MAUI Cartesian Chart Control.
+By following these strategies, you can optimize the performance of the [FastLine Series](https://help.syncfusion.com/maui/cartesian-charts/fastline) in .NET MAUI Cartesian Chart Control.
 
 ## Troubleshooting
 
